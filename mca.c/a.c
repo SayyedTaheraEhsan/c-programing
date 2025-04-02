@@ -1,5 +1,4 @@
 #include "Board.h"
-
 Board::Board() : grid(SIZE, std::vector<char>(SIZE, '-')) {}
 
 void Board::placeQueen(int row, int col)
