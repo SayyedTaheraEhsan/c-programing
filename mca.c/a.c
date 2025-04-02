@@ -6,7 +6,6 @@ void Board::placeQueen(int row, int col)
 {
     grid[row][col] = 'Q';
 }
-
 void Board::removeQueen(int row, int col)
 {
     grid[row][col] = '-';
