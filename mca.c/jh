@@ -13,7 +13,7 @@ Board.o: Board.cpp Board.h
         $(CXX) $(CXXFLAGS) -c Board.cpp
 
 Queen.o: Queen.cpp Queen.h Board.h
-        $(CXX) $(CXXFLAGS) -c Queen.cpp
+       $(CXX) $(CXXFLAGS) -c Queen.cpp
 
 main.o: main.cpp Board.h Queen.h
         $(CXX) $(CXXFLAGS) -c main.cpp
