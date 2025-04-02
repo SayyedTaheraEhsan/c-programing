@@ -1,38 +1,40 @@
-#include<stdio.h>
-int main()
+#include "Board.h"
+
+Board::Board() : grid(SIZE, std::vector<char>(SIZE, '-')) {}
+
+void Board::placeQueen(int row, int col)
 {
-    int i,j,sum;
-    int M[2][2];
-    printf("enter your matrix\n ");
-    for(i=0;i<2;i++)
-    {
-        for(j=0;j<2;j++)
-        {
-         printf("[%d][%d]", i, j);
-            scanf("%d", &M[i][j]);
-        }
-    }
-     printf("your matrix is\n");
-     for(i=0;i<2;i++) 
-    {
-        for(j=0;j<2;j++)
-        {
-         printf("%d\t", M[i][j]);
-        }
-       printf("\n");
-    }
-     printf("your addtion of culem is \n");
+    grid[row][col] = 'Q';
+}
 
-     for(j=0;j<2;j++) 
-    {
-        sum=0;
-    
-        for(i=0;i<2;i++)
-        {
-           sum=sum+M[i][j];
-        }
-         printf("sum=%d\t",sum);
-    }
-    return 0;
+void Board::removeQueen(int row, int col)
+{
+    grid[row][col] = '-';
+}
 
+bool Board::isSafe(int row, int col) const
+{
+    for (int i = 0; i < col; i++)
+        if (grid[row][i] == 'Q')
+            return false;
+
+    for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)
+        if (grid[i][j] == 'Q')
+            return false;
+
+    for (int i = row, j = col; i < SIZE && j >= 0; i++, j--)
+        if (grid[i][j] == 'Q')
+            return false;
+
+    return true;
+}
+
+void Board::display() const
+{
+    for (const auto &row : grid)
+    {
+        for (char cell : row)
+            std::cout << cell << " ";
+        std::cout << std::endl;
+    }
 }
