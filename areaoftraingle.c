@@ -11,7 +11,6 @@ int main() {
 
     // Calculate the area
     area = 0.5 * base * height;
-
     // Display the area
     printf("The area of the triangle is: %.2f\n", area);
 
