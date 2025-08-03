@@ -17,7 +17,6 @@ void searchStudent();
 
 int main() {
     int choice;
-    
     while (1) {
         printf("\n--- Student Database ---\n");
         printf("1. Add Student\n");
