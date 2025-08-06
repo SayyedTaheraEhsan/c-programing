@@ -1,0 +1,301 @@
+q1 
+
+I'll solve questions 1, 2, and 4 from the assignment. The data for question 3 is incomplete, so I cannot provide a solution for that problem.
+
+Question 1: Lagrange's Interpolation
+
+The problem asks to construct a polynomial of degree 
+
+≤2 passing through the points (1,2), (2,3), and (4,9) using Lagrange's formula.
+
+Lagrange's formula for a polynomial of degree n is given by:
+Pn​(x)=∑j=0n​yj​Lj​(x)
+where Lj​(x)=∏i=0,i=jn​xj​−xi​x−xi​​
+
+Given the points:
+
+    x0​=1, y0​=2
+
+    x1​=2, y1​=3
+
+    x2​=4, y2​=9
+
+We need to find L0​(x), L1​(x), and L2​(x).
+
+L0​(x)=(x0​−x1​)(x0​−x2​)(x−x1​)(x−x2​)​=(1−2)(1−4)(x−2)(x−4)​=(−1)(−3)(x−2)(x−4)​=3x2−6x+8​
+
+L1​(x)=(x1​−x0​)(x1​−x2​)(x−x0​)(x−x2​)​=(2−1)(2−4)(x−1)(x−4)​=(1)(−2)(x−1)(x−4)​=−2x2−5x+4​
+
+L2​(x)=(x2​−x0​)(x2​−x1​)(x−x0​)(x−x1​)​=(4−1)(4−2)(x−1)(x−2)​=(3)(2)(x−1)(x−2)​=6x2−3x+2​
+
+Now, we construct the polynomial P2​(x):
+P2​(x)=y0​L0​(x)+y1​L1​(x)+y2​L2​(x)
+P2​(x)=2(3x2−6x+8​)+3(−2x2−5x+4​)+9(6x2−3x+2​)
+P2​(x)=32​(x2−6x+8)−23​(x2−5x+4)+23​(x2−3x+2)
+
+To simplify, we find a common denominator, which is 6:
+P2​(x)=64(x2−6x+8)−9(x2−5x+4)+9(x2−3x+2)​
+P2​(x)=6(4x2−24x+32)+(−9x2+45x−36)+(9x2−27x+18)​
+P2​(x)=6(4−9+9)x2+(−24+45−27)x+(32−36+18)​
+P2​(x)=64x2−6x+14​=32x2−3x+7​
+
+The polynomial is P2​(x)=32​x2−x+37​.
+
+q2
+
+
+I'll solve questions 1, 2, and 4 from the assignment. The data for question 3 is incomplete, so I cannot provide a solution for that problem.
+
+Question 1: Lagrange's Interpolation
+
+The problem asks to construct a polynomial of degree 
+
+≤2 passing through the points (1,2), (2,3), and (4,9) using Lagrange's formula.
+
+Lagrange's formula for a polynomial of degree n is given by:
+Pn​(x)=∑j=0n​yj​Lj​(x)
+where Lj​(x)=∏i=0,i=jn​xj​−xi​x−xi​​
+
+Given the points:
+
+    x0​=1, y0​=2
+
+    x1​=2, y1​=3
+
+    x2​=4, y2​=9
+
+We need to find L0​(x), L1​(x), and L2​(x).
+
+L0​(x)=(x0​−x1​)(x0​−x2​)(x−x1​)(x−x2​)​=(1−2)(1−4)(x−2)(x−4)​=(−1)(−3)(x−2)(x−4)​=3x2−6x+8​
+
+L1​(x)=(x1​−x0​)(x1​−x2​)(x−x0​)(x−x2​)​=(2−1)(2−4)(x−1)(x−4)​=(1)(−2)(x−1)(x−4)​=−2x2−5x+4​
+
+L2​(x)=(x2​−x0​)(x2​−x1​)(x−x0​)(x−x1​)​=(4−1)(4−2)(x−1)(x−2)​=(3)(2)(x−1)(x−2)​=6x2−3x+2​
+
+Now, we construct the polynomial P2​(x):
+P2​(x)=y0​L0​(x)+y1​L1​(x)+y2​L2​(x)
+P2​(x)=2(3x2−6x+8​)+3(−2x2−5x+4​)+9(6x2−3x+2​)
+P2​(x)=32​(x2−6x+8)−23​(x2−5x+4)+23​(x2−3x+2)
+
+To simplify, we find a common denominator, which is 6:
+P2​(x)=64(x2−6x+8)−9(x2−5x+4)+9(x2−3x+2)​
+P2​(x)=6(4x2−24x+32)+(−9x2+45x−36)+(9x2−27x+18)​
+P2​(x)=6(4−9+9)x2+(−24+45−27)x+(32−36+18)​
+P2​(x)=64x2−6x+14​=32x2−3x+7​
+
+The polynomial is P2​(x)=32​x2−x+37​.
+
+Question 2: Newton's Interpolation
+
+The problem asks to find the Newton's Interpolation polynomial of degree 
+
+≤3 that interpolates the points (−2,1), (0,1), (1,4), and (2,17).
+
+Newton's form of the interpolating polynomial is given by:
+Pn​(x)=a0​+a1​(x−x0​)+a2​(x−x0​)(x−x1​)+⋯+an​(x−x0​)(x−x1​)…(x−xn−1​)
+where the coefficients ai​ are the divided differences.
+
+Given the points:
+
+    x0​=−2, f(x0​)=1
+
+    x1​=0, f(x1​)=1
+
+    x2​=1, f(x2​)=4
+
+    x3​=2, f(x3​)=17
+
+We construct the divided difference table:
+f[x0​]=f(−2)=1=a0​
+
+First-order divided differences:
+f[x0​,x1​]=x1​−x0​f(x1​)−f(x0​)​=0−(−2)1−1​=20​=0=a1​
+f[x1​,x2​]=x2​−x1​f(x2​)−f(x1​)​=1−04−1​=13​=3
+f[x2​,x3​]=x3​−x2​f(x3​)−f(x2​)​=2−117−4​=113​=13
+
+Second-order divided differences:
+f[x0​,x1​,x2​]=x2​−x0​f[x1​,x2​]−f[x0​,x1​]​=1−(−2)3−0​=33​=1=a2​
+f[x1​,x2​,x3​]=x3​−x1​f[x2​,x3​]−f[x1​,x2​]​=2−013−3​=210​=5
+
+Third-order divided difference:
+f[x0​,x1​,x2​,x3​]=x3​−x0​f[x1​,x2​,x3​]−f[x0​,x1​,x2​]​=2−(−2)5−1​=44​=1=a3​
+
+Now, we assemble the polynomial:
+P3​(x)=a0​+a1​(x−x0​)+a2​(x−x0​)(x−x1​)+a3​(x−x0​)(x−x1​)(x−x2​)
+P3​(x)=1+0(x−(−2))+1(x−(−2))(x−0)+1(x−(−2))(x−0)(x−1)
+P3​(x)=1+1(x+2)(x)+1(x+2)(x)(x−1)
+P3​(x)=1+x2+2x+(x2+2x)(x−1)
+P3​(x)=1+x2+2x+(x3−x2+2x2−2x)
+P3​(x)=1+x2+2x+x3+x2−2x
+P3​(x)=x3+2x2+1
+
+
+
+
+q3
+
+
+x	f(x)	First Divided Difference	Second Divided Difference	Third Divided Difference	Fourth Divided Difference	Fifth Divided Difference
+1	1					
+		f[1,2]=2				
+2	3		f[1,2,3]=1			
+		f[2,3]=4		f[1,2,3,4]=4/3		
+3	7		f[2,3,4]=5		f[1,2,3,4,5]=−11/12	
+		f[3,4]=14		f[2,3,4,5]=−7/3		f[1,2,3,4,5,6]=7/20
+4	21		f[3,4,5]=−2		f[2,3,4,5,6]=5/6	
+		f[4,5]=10		f[3,4,5,6]=1		
+5	31		f[4,5,6]=1			
+		f[5,6]=12				
+6	43					
+
+Coefficients of the Polynomial:
+Coefficient	Value
+a0​	1
+a1​	2
+a2​	1
+a3​	4/3
+a4​	-11/12
+a5​	7/20
+
+The Interpolating Polynomial:
+P5​(x)=a0​+a1​(x−x0​)+a2​(x−x0​)(x−x1​)+a3​(x−x0​)(x−x1​)(x−x2​)+a4​(x−x0​)(x−x1​)(x−x2​)(x−x3​)+a5​(x−x0​)(x−x1​)(x−x2​)(x−x3​)(x−x4​)
+
+P5​(x)=1+2(x−1)+1(x−1)(x−2)+34​(x−1)(x−2)(x−3)−1211​(x−1)(x−2)(x−3)(x−4)+207​(x−1)(x−2)(x−3)(x−4)(x−5)
+
+P5​(x)=1+2(x−1)+1(x−1)(x−2)+34​(x−1)(x−2)(x−3)−1211​(x−1)(x−2)(x−3)(x−4)+207​(x−1)(x−2)(x−3)(x−4)(x−5) is a tedious process, but it can be done step-by-step.
+
+Let's expand each term:
+
+    T0​=1
+
+    T1​=2(x−1)=2x−2
+
+    T2​=1(x−1)(x−2)=(x2−3x+2)
+
+    T3​=34​(x−1)(x−2)(x−3)=34​(x2−3x+2)(x−3)=34​(x3−3x2+2x−3x2+9x−6)=34​(x3−6x2+11x−6)=34​x3−8x2+344​x−8
+
+    T4​=−1211​(x−1)(x−2)(x−3)(x−4)=−1211​(x3−6x2+11x−6)(x−4)=−1211​(x4−6x3+11x2−6x−4x3+24x2−44x+24)=−1211​(x4−10x3+35x2−50x+24)=−1211​x4+12110​x3−12385​x2+12550​x−12264​=−1211​x4+655​x3−12385​x2+6275​x−22
+
+    T5​=207​(x−1)(x−2)(x−3)(x−4)(x−5)=207​(x4−10x3+35x2−50x+24)(x−5)=207​(x5−10x4+35x3−50x2+24x−5x4+50x3−175x2+250x−120)=207​(x5−15x4+85x3−225x2+274x−120)=207​x5−20105​x4+20595​x3−201575​x2+201918​x−20840​=207​x5−421​x4+4119​x3−4315​x2+10959​x−42
+
+Now, we sum the coefficients for each power of x:
+
+x5 term:
+207​
+
+x4 term:
+−1211​−421​=−1211​−1263​=−1274​=−637​
+
+x3 term:
+34​+655​+4119​=68​+655​+12119×3​=663​+12357​=12126​+12357​=12483​=4161​
+(This calculation appears incorrect. Let's re-calculate.)
+34​+655​+4119​=1216​+12110​+12357​=12483​=4161​
+(Wait, there's another x^3 term from T4: 655​x3. From T3: 34​x3. From T5: 4119​x3. Let's try again.)
+From T3​: 34​x3
+From T4​: −1211​(−10x3)=12110​x3=655​x3
+From T5​: 207​(85x3)=20595​x3=4119​x3
+Coefficient of x3: 34​+655​+4119​=1216​+12110​+12357​=12483​=4161​
+
+x2 term:
+1−8−12385​−4315​=−7−12385​−12945​=−7−121330​=−7−6665​=−642​−6665​=−6707​
+(Let's check the terms again.)
+From T2​: x2
+From T3​: −8x2
+From T4​: −1211​(35x2)=−12385​x2
+From T5​: 207​(−225x2)=−201575​x2=−4315​x2
+Coefficient of x2: 1−8−12385​−4315​=−7−12385​−12945​=−7−121330​=−7−6665​=−642​−6665​=−6707​
+
+x term:
+2+(−3)+344​+6275​+10959​=−1+344​+6275​+10959​
+(Let's get a common denominator of 30)
+−3030​+30440​+301375​+302877​=304662​=152331​=5777​
+(Let's check the terms again.)
+From T1​: 2x
+From T2​: −3x
+From T3​: 34​(11x)=344​x
+From T4​: −1211​(−50x)=12550​x=6275​x
+From T5​: 207​(274x)=201918​x=10959​x
+Coefficient of x: 2−3+344​+6275​+10959​=−1+60880​+602750​+605754​=−1+609384​=−1+5782​=5777​
+
+Constant term:
+1−2+2−8−22−42=−69
+(Let's check the terms again.)
+From T0​: 1
+From T1​: −2
+From T2​: 2
+From T3​: 34​(−6)=−8
+From T4​: −1211​(24)=−22
+From T5​: 207​(−120)=−42
+Constant term: 1−2+2−8−22−42=−69
+
+The simplified polynomial is:
+P5​(x)=207​x5−637​x4+4161​x3−6707​x2+5777​x−69
+
+
+q4
+
+
+
+dxdy​ at x=1.1 and x=1.6 for the given data.
+
+The data provided is as follows:
+| X | 1.0 | 1.1 | 1.2 | 1.3 | 1.4 | 1.5 | 1.6 |
+|---|---|---|---|---|---|---|---|
+| y | 7.989 | 8.403 | 8.781 | 9.129 | 9.451 | 9.750 | 10.031 | 
+
+The step size is h=0.1.
+
+For x=1.1:
+
+Since x=1.1 is at the beginning of the table (if we consider a sub-table starting from 1.1), we use the forward difference formula.
+
+    First-order differences (Δy):
+
+        Δy0​=y(1.2)−y(1.1)=8.781−8.403=0.378
+
+        Δy1​=y(1.3)−y(1.2)=9.129−8.781=0.348
+
+        Δy2​=y(1.4)−y(1.3)=9.451−9.129=0.322
+
+    Second-order differences (Δ2y):
+
+        Δ2y0​=Δy1​−Δy0​=0.348−0.378=−0.030
+
+        Δ2y1​=Δy2​−Δy1​=0.322−0.348=−0.026
+
+    Third-order difference (Δ3y):
+
+        Δ3y0​=Δ2y1​−Δ2y0​=−0.026−(−0.030)=0.004
+
+Using the formula dxdy​​x0​​≈h1​(Δy0​−21​Δ2y0​+31​Δ3y0​):
+dxdy​∣x=1.1​≈0.11​(0.378−21​(−0.030)+31​(0.004))
+≈10(0.378+0.015+0.00133)
+≈10(0.39433)=3.9433
+
+For x=1.6:
+
+Since x=1.6 is at the end of the table, we use the backward difference formula.
+
+    First-order differences (∇y):
+
+        ∇y6​=y(1.6)−y(1.5)=10.031−9.750=0.281
+
+        ∇y5​=y(1.5)−y(1.4)=9.750−9.451=0.299
+
+        ∇y4​=y(1.4)−y(1.3)=9.451−9.129=0.322
+
+    Second-order differences (∇2y):
+
+        ∇2y6​=∇y6​−∇y5​=0.281−0.299=−0.018
+
+        ∇2y5​=∇y5​−∇y4​=0.299−0.322=−0.023
+
+    Third-order difference (∇3y):
+
+        ∇3y6​=∇2y6​−∇2y5​=−0.018−(−0.023)=0.005
+
+Using the formula dxdy​​xn​​≈h1​(∇yn​+21​∇2yn​+31​∇3yn​):
+dxdy​∣x=1.6​≈0.11​(0.281+21​(−0.018)+31​(0.005))
+≈10(0.281−0.009+0.00167)
+≈10(0.27367)=2.7367
+
