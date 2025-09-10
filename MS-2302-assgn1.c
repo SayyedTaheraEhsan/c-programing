@@ -16,7 +16,6 @@ int main(int argc, char *argv[]) {
         // Take input from user
         printf("Enter total number of elements (N): ");
         scanf("%d", &N);
-
         // Allocate and read numbers
         numbers = (int *)malloc(N * sizeof(int));
         printf("Enter %d numbers:\n", N);
