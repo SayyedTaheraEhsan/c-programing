@@ -2,7 +2,6 @@
 #include <vector>
 #include <mpi.h>
 using namespace std;
-
 int main(int argc, char* argv[]) {
     int rank, size, N;
     vector<int> arr;   // Only root will store the full array
@@ -13,9 +12,8 @@ int main(int argc, char* argv[]) {
     MPI_Comm_size(MPI_COMM_WORLD, &size);  
 
     if (rank == 0) {
-        cout << "Enter number of elements (N): ";
+        cout << "Enter number of element (N): ";
         cin >> N;
-
         arr.resize(N);
         cout << "Enter " << N << " numbers:\n";
         for (int i = 0; i < N; i++) {
@@ -26,10 +24,9 @@ int main(int argc, char* argv[]) {
     // Broadcast N to all processes
     MPI_Bcast(&N, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-    // Calculate local sizes (handle case when N is not divisible by size)
+    // Calculate local size (handle case when N is not divisible by size)
     int local_n = N / size;
     int remainder = N % size;
-
     vector<int> sendcounts(size), displs(size);
     for (int i = 0; i < size; i++) {
         sendcounts[i] = local_n + (i < remainder ? 1 : 0);
